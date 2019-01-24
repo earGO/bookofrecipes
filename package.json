@@ -1,0 +1,14 @@
+{
+  "name": "bookofrecipes",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.6",
+    "nodemon": "^1.18.9"
+  }
+}
