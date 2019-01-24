@@ -1,0 +1,1 @@
+console.log('got scripts and footer working');
