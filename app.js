@@ -2,14 +2,15 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require("mongoose"),
     app = express(),
-    port = 3000;
+    port = process.env.PORT || 3000;
 
 //models and seeds
 var Ingredient = require('./models/ingredients'),
     Hardware = require('./models/hardware'),
     seeds = require('./seeds'),
     Stage = require('./models/stages'),
-    Recipe = require('./models/recipes')
+    Recipe = require('./models/recipes'),
+    mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/bookofrecipes'
 
 
 seeds.ingredientsSeedDB()
@@ -21,7 +22,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
 
-mongoose.connect('mongodb://localhost/bookofrecipes', {useNewUrlParser: true})
+mongoose.connect(mongoDB, {useNewUrlParser: true})
 
 
 app.get('/', (req, res) => {
@@ -114,5 +115,4 @@ app.get('/about',(req,res)=>{
 
 app.listen(port, function () {
     console.log('server up and running on port', port)
-
 })
