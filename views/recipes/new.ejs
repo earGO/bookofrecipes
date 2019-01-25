@@ -1,0 +1,63 @@
+<% include ../partials/header %>
+
+<main class="container form-boundary">
+    <form class="form-horizontal">
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Create Recipe</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Recipe name</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="recipe-name" name="recipe-name" type="text" placeholder="Fried potatoes with eggs" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-description">Recipe description</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <textarea class="form-control" id="recipe-description" name="recipe-description">Fried eggs are freaking awesome</textarea>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="stage1-name">stage 1 name</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="stage1-name" name="stage1-name" type="text" placeholder="stage 1 text" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="stage1-content">Stage 1 description</label>
+                <div class="col-lg-12">
+                    <textarea class="form-control" id="stage1-content" name="stage1-content">Edit stage description here</textarea>
+                </div>
+            </div>
+
+            <!-- Buttons for a recipe -->
+            <div class="d-flex flex-row bd-highlight mb-3">
+                <button id="add-stage" name="add-stage" class="btn btn-primary index-buttons">Add Stage</button>
+                <button id="add-stage" name="add-stage" class="btn btn-primary index-buttons">Add Hardware</button>
+                <button id="add-stage" name="add-stage" class="btn btn-primary index-buttons">Add Ingredient</button>
+            </div>
+
+
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"></label>
+                <div class="col-md-8">
+                    <a id="save" name="save" class="btn btn-success" href="#">Save</a>
+                    <a id="cansel" name="cansel" class="btn btn-danger" href="/recipes">Cancel</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</main>
+
+<% include ../partials/footer %>

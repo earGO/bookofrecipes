@@ -1,0 +1,77 @@
+<% include ../partials/header %>
+
+<main class="container form-boundary mt-4">
+    <form class="form-horizontal">
+
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Create Ingredient</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Ingredient name</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="recipe-name" name="recipe-name" type="text" placeholder="name the ingredient" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-description">Ingredient description</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <textarea class="form-control" id="recipe-description" name="recipe-description">Describe the ingredient</textarea>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Proteins</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="ingredient-proteins" name="ingredient-proteins" type="text" placeholder="insert proteins per 100g" class="form-control input-md">
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Grease</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="ingredient-grease" name="ingredient-grease" type="text" placeholder="insert grease per 100g" class="form-control input-md">
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Carbs</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="ingredient-carbs" name="ingredient-carbs" type="text" placeholder="insert carbs per 100g" class="form-control input-md">
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Calories</label>
+                    <div class="col-lg-12 edit-form-textarea">
+                        <input id="ingredient-calories" name="ingredient-calories" type="text" placeholder="insert calories per 100g" class="form-control input-md">
+                    </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="recipe-name">Image</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="ingredient-image" name="ingredient-image" type="text" placeholder="insert image link" class="form-control input-md">
+                </div>
+            </div>
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"></label>
+                <div class="col-md-8">
+                    <a id="save" name="save" class="btn btn-success" href="#">Save</a>
+                    <a id="cansel" name="cansel" class="btn btn-danger" href="/ingredients">Cancel</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</main>
+
+
+
+<% include ../partials/footer %>

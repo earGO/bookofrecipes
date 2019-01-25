@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<main class="container form-boundary mt-4">
+    <form class="form-horizontal">
+
+        <fieldset>
+
+            <!-- Form Name -->
+            <legend>Create Hardware</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="hardware-name">Hardware name</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="hardware-name" name="hardware-name" type="text" placeholder="name the hardware" class="form-control input-md">
+                </div>
+            </div>
+
+            <!-- Textarea -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="hardware-description">Hardware description</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <textarea class="form-control" id="hardware-description" name="hardware-description">Describe the hardware</textarea>
+                </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="hardware-name">Image</label>
+                <div class="col-lg-12 edit-form-textarea">
+                    <input id="hardware-image" name="hardware-image" type="text" placeholder="insert image link" class="form-control input-md">
+                </div>
+            </div>
+            <!-- Button (Double) -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"></label>
+                <div class="col-md-8">
+                    <a id="save" name="save" class="btn btn-success" href="#">Save</a>
+                    <a id="cancel" name="cancel" class="btn btn-danger" href="/hardware">Cancel</a>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+</main>
+
+
+
+<% include ../partials/footer %>

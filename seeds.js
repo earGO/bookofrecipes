@@ -124,6 +124,15 @@ var ingredientsSeedDB = function() {
             console.log('error wiping out Ingredients collection\n',err)
         } else {
             console.log('successfully wiped out Ingredients collection')
+            dataIngredients.forEach(ingredient=>{
+                Ingredient.create(ingredient,(err,createdIngredient)=>{
+                    if(err){
+                        console.log('error creating ingredient in a collection\n',err)
+                    } else {
+
+                    }
+                })
+            })
         }
     })
 },
@@ -133,11 +142,18 @@ var ingredientsSeedDB = function() {
             console.log('error wiping out Hardware collection \n',err)
         } else {
             console.log('successfully wiped out Hardware collection')
+            dataHardware.forEach(hardware=>{
+                Hardware.create(hardware,(err,createdHardware)=>{
+                    if(err){
+                        console.log('error creating item in Hardware collection')
+                    }
+                })
+            })
         }
     })
     },
 
-    stageSeedDB = function(){
+/*    stageSeedDB = function(){
         Stage.deleteMany({},(err)=>{
             if(err){
                 console.log('error wiping out Stages collection \n',err)
@@ -145,7 +161,7 @@ var ingredientsSeedDB = function() {
                 console.log('Stages collection wiped out successfully')
             }
         })
-    },
+    },*/
 
     recipeSeedDB = function(){
         Recipe.deleteMany({},(err)=>{
@@ -159,37 +175,19 @@ var ingredientsSeedDB = function() {
                             console.log('failed creating new recipe\n',err)
                         } else {
                             console.log('created new recipe')
-                            stageData.forEach(stage => {
-                                Stage.create(stage,(err,createdStage)=>{
+                                Stage.create({
+                                    name:'Stage placeholder',
+                                    content:'Stage content placeholder - here will be a description what to do with all ingredients. And for now - some LOREM'
+                                            }
+                                ,(err,createdStage)=>{
                                     if(err){
                                         console.log('error creating stage inside of a recipe\n',err)
                                     } else {
                                         createdRecipe.stages.push(createdStage)
-                                        console.log('created stage inside recipe')
+                                        createdRecipe.save()
+                                        // console.log('created stage inside recipe')
                                     }
                                 })
-                            })
-                            dataHardware.forEach(hardware=>{
-                                Hardware.create(hardware,(err,createdHardware)=>{
-                                    if(err){
-                                        console.log('error creating Hardware')
-                                    } else {
-                                        createdRecipe.hardware.push(createdHardware)
-                                        console.log('created new Hardware inside recipe')
-                                    }
-                                })
-                            })
-                            dataIngredients.forEach(ingredient => {
-                                Ingredient.create(ingredient,(err,createdIngredient)=>{
-                                    if(err){
-                                        console.log('error creating ingredient\n',err)
-                                    } else {
-                                        createdRecipe.ingredients.push(createdIngredient)
-                                        console.log('created new Ingredient inside recipe')
-                                    }
-                                })
-                            })
-                            createdRecipe.save()
                         }
                     })
                 })
@@ -204,6 +202,6 @@ var ingredientsSeedDB = function() {
 module.exports={
     ingredientsSeedDB,
     hardwareSeedDB,
-    stageSeedDB,
+    // stageSeedDB,
     recipeSeedDB
 }

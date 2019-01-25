@@ -1,13 +1,34 @@
 <% include ../partials/header %>
 
-<h1>This is a page for all ingredients</h1>
-
-<%ingredients.forEach(ingredient => {%>
-    <div>
-        <h1><%=ingredient.name%></h1>
-        <img src="<%=ingredient.image%>">
-        <p><%=ingredient.content%></p>
+<div class="row recipe-boundary">
+    <div class="col-lg-12">
+        <h4 class="mt-4">This is a page for all ingredients</h4>
     </div>
-<%})%>
+</div>
+<div class="row recipe-boundary">
+    <%ingredients.forEach(ingredient => {%>
+    <div class="card mb-3 col-lg-4 col-md-6">
+        <h3 class="card-header"><%=ingredient.name%></h3>
+<!--        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+        </div>-->
+        <img style="height: 200px; width: 100%; display: block;" src="<%=ingredient.image%>" alt="Recipe image">
+        <div class="card-body">
+            <p class="card-text"><%=ingredient.content%></p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <!--callories line-->
+            <li class="list-group-item">Total calories: <%=ingredient.calories%>
+            </li>
+            <!--proteins and grease and carbs line-->
+            <li class="list-group-item">Proteins <%=ingredient.proteins%>, Grease <%=ingredient.grease%>, and Carbs <%=ingredient.carbs%></li>
+        </ul>
+        <div class="card-body">
+            <a href="/ingredients/<%=ingredient._id %>/edit" class="btn btn-primary">Edit ingredient</a>
+        </div>
+    </div>
+    <%})%>
+</div>
 
 <% include ../partials/footer %>

@@ -1,7 +1,25 @@
 
   <% include partials/header %>
-    <h1>Index View</h1>
-    <p>Welcome to ye oldie book of recipes</p>
+  <div class="row recipe-boundary">
+    <div class="col-lg-12">
+      <h1>Welcome to ye oldie book of masculine recipes</h1>
+    </div>
+  </div>
+  <div class="row recipe-boundary">
+    <div class="col-lg-12">
+      <p>
+        You can browse 'em, you can view 'em, can edit 'em and so on
+      </p>
+    </div>
+    <div class="col-lg-12">
+      <div class="d-flex flex-row bd-highlight mb-3">
+        <a id="browse-recipes" name="browse-recipes" class="btn btn-warning index-buttons" href="/recipes/new">Add Recipe</a>
+        <a id="browse-hardware" name="browse-hardware" class="btn btn-warning index-buttons" href="/hardware/new">Add Hardware</a>
+        <a id="browse-ingredients" name="browse-ingredients" class="btn btn-warning index-buttons" href="/ingredients/new">Add Ingredient</a>
+      </div>
+    </div>
+  </div>
+
 
   <% include partials/footer %>
 

@@ -1,5 +1,77 @@
 <% include ../partials/header %>
-
-<h1>got a view here!</h1>
+<main class="container show-one">
+    <div class="row">
+        <side class="col-md-3">
+            <p class="lead">Book of Recipes</p>
+            <div class="list-group">
+                <li class="list-group-item active">Info 1</li>
+                <li class="list-group-item">Info 2</li>
+                <li class="list-group-item">Info 3</li>
+            </div>
+        </side>
+        <article class="col-md-9">
+            <div class="img-thumbnail">
+                <img class="img-fluid" src="<%= recipe.image%>" width="100%">
+                <div class="caption-full float-left">
+                    <h5 class="pull-right"><a class="text-primary text-capitalize" href="#"><%=recipe.name%></a></h5>
+                </div>
+                <div class="text-right">
+                    <a class="btn btn-primary" href="/recipes/<%= recipe._id%>/edit">Edit recipe</a>
+                </div>
+                <div class="caption-full">
+                    <p>
+                        <%= recipe.content%>
+                    </p>
+                </div>
+            </div>
+            <div class="well">
+                <h5>nutritional value of the dish</h5>
+                <button class="btn btn-secondary">Weight</button>
+                <button class="btn btn-secondary">proteins</button>
+                <button class="btn btn-secondary">grease</button>
+                <button class="btn btn-secondary">carbs</button>
+            </div>
+            <div class="well">
+                <h5>nutritional value of servings</h5>
+                <button class="btn btn-primary">Weight</button>
+                <button class="btn btn-primary">proteins</button>
+                <button class="btn btn-primary">grease</button>
+                <button class="btn btn-primary">carbs</button>
+            </div>
+            <div class="well mt-3">
+                <div>
+                    <% recipe.stages.forEach(stage => {%>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><%= stage.name %></strong>
+                                <p>
+                                    <%= stage.content %>
+                                </p>
+                                <p>
+                                    Sirloin salami t-bone beef ribs shank. Jowl ground round doner, spare ribs buffalo cow tenderloin. Salami picanha pig alcatra flank turkey meatloaf pork chop cow tri-tip. Pork belly tail tenderloin short loin tri-tip.
+                                </p>
+                            </div>
+                        </div>
+                    <%})%>
+                </div>
+                <div>
+                    <% recipe.stages.forEach(stage => {%>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong><%= stage.name %> 2</strong>
+                                <p>
+                                    <%= stage.content %> (stage 2)
+                                </p>
+                                <p>
+                                    Sirloin salami t-bone beef ribs shank. Jowl ground round doner, spare ribs buffalo cow tenderloin. Salami picanha pig alcatra flank turkey meatloaf pork chop cow tri-tip. Pork belly tail tenderloin short loin tri-tip.
+                                </p>
+                            </div>
+                        </div>
+                    <%})%>
+                </div>
+            </div>
+        </article>
+    </div>
+</main>
 
 <% include ../partials/footer %>

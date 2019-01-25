@@ -10,10 +10,27 @@ a {
 }
 
 .recipe-boundary{
-  width: 60%;
+  width: 68%;
   margin: auto;
 }
 
 .recipe-card{
   margin:1vw;
+}
+
+.show-one{
+  margin-top: 2vh;
+}
+
+.form-boundary{
+  width: 30%;
+  margin: auto;
+}
+
+.edit-form-textarea{
+  height:3vw;
+}
+
+.index-buttons{
+  margin:0.5vw;
 }

@@ -1,32 +1,29 @@
 <% include ../partials/header %>
 <div class="row recipe-boundary">
     <div class="col-lg-12">
-        <h1>This is a page for all recipes</h1>
+        <h4 class="mt4">This is a page for all recipes</h4>
     </div>
 </div>
 <div class="row recipe-boundary">
     <%recipes.forEach(recipe => {%>
     <div class="card mb-3 col-lg-4 col-md-6">
         <h3 class="card-header"><%=recipe.name%></h3>
-        <div class="card-body">
+<!--        <div class="card-body">
             <h5 class="card-title">Special title treatment</h5>
             <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-        </div>
+        </div>-->
         <img style="height: 200px; width: 100%; display: block;" src="<%=recipe.image%>" alt="Recipe image">
         <div class="card-body">
             <p class="card-text"><%=recipe.content%></p>
         </div>
         <ul class="list-group list-group-flush">
             <!--callories line-->
-            <li class="list-group-item">Total calories:
-                <%let totalCalories = 0;%>
-                    <%console.log(recipe.ingredients)%>
-                <%=totalCalories%>
+            <li class="list-group-item">Total calories: TODO later
             </li>
             <!--proteins and grease and carbs line-->
-            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Proteins, Greases and Carbs: todo later</li>
             <!--time elapsed line-->
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li class="list-group-item">Time: TODO later</li>
         </ul>
         <div class="card-body">
             <a href="/recipes/<%=recipe._id %>" class="btn btn-primary">See recipe</a>

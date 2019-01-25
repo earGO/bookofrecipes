@@ -14,7 +14,7 @@ var Ingredient = require('./models/ingredients'),
 
 seeds.ingredientsSeedDB()
 seeds.hardwareSeedDB()
-seeds.stageSeedDB()
+// seeds.stageSeedDB()
 seeds.recipeSeedDB()
 
 app.set('view engine', 'ejs')
@@ -39,6 +39,25 @@ app.get('/recipes', (req, res) => {
     })
 })
 
+app.get('/recipes/new',(req,res) =>{
+    res.render('recipes/new')
+})
+
+app.get('/recipes/:id',(req,res) => {
+    Recipe.findById(req.params.id).populate("stages").exec((err,fullRecipe) => {
+        if(err){
+            console.log('error loading recipe\n',err)
+        } else {
+            console.log(fullRecipe)
+            res.render('recipes/show',{recipe:fullRecipe})
+        }
+    })
+})
+
+app.get('/recipes/:id/edit',(req,res) =>{
+    res.render('recipes/edit')
+})
+
 //Ingredients routes
 app.get('/ingredients', (req, res) => {
     Ingredient.find({},(err,allIngredients)=>{
@@ -50,6 +69,20 @@ app.get('/ingredients', (req, res) => {
     })
 })
 
+app.get('/ingredients/new', (req, res) => {
+            res.render('ingredients/new')
+})
+
+app.get('/ingredients/:id/edit', (req, res) => {
+    Ingredient.findById(req.params.id,(err,ingredient)=>{
+        if(err){
+            console.log('error fetching ingredient\n',err)
+        } else {
+            res.render('ingredients/edit',{ingredient:ingredient})
+        }
+    })
+})
+
 //hardware routes
 app.get('/hardware',(req,res)=>{
     Hardware.find({},(err,allHardware)=>{
@@ -57,6 +90,20 @@ app.get('/hardware',(req,res)=>{
             console.log('error fetching hardware\n',err)
         }else{
             res.render('hardware/index',{hardware:allHardware})
+        }
+    })
+})
+
+app.get('/hardware/new', (req, res) => {
+    res.render('hardware/new')
+})
+
+app.get('/hardware/:id/edit',(req,res)=>{
+    Hardware.findById(req.params.id,(err,hardware)=>{
+        if(err){
+            console.log('error fetching hardware\n',err)
+        }else{
+            res.render('hardware/edit',{hardware:hardware})
         }
     })
 })

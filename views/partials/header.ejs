@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Book of recipes</title>
-    <link rel='stylesheet' href='/stylesheets/bootstrap.css'/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
@@ -18,14 +18,33 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/recipes">Recipes</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/recipes" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Recipes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/recipes">Browse all</a>
+                    <a class="dropdown-item" href="/recipes/new">Add new</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/ingredients">Ingredients</a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/ingredients" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ingredients
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/ingredients">Browse all</a>
+                    <a class="dropdown-item" href="/ingredients/new">Add new</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/hardware">Hardware</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/hardware" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Hardware
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/hardware">Browse all</a>
+                    <a class="dropdown-item" href="/hardware/new">Add new</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/about">About</a>
