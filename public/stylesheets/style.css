@@ -1,8 +1,19 @@
 body {
-  padding: 50px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
 
 a {
   color: #00B7FF;
+}
+
+.recipe-boundary{
+  width: 60%;
+  margin: auto;
+}
+
+.recipe-card{
+  margin:1vw;
 }

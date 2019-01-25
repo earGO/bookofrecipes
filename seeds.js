@@ -11,7 +11,7 @@ var dataIngredients =[
         proteins:'2',
         grease:'0,1',
         carbs:'17',
-        kkallories:'77',
+        calories:'77',
         content:'Potatoes are stupid'
     },
     {
@@ -20,7 +20,7 @@ var dataIngredients =[
         proteins:'3.3',
         grease:'0.3',
         carbs:'3.3',
-        kkallories:'22',
+        calories:'22',
         content:'Mushrooms even more stupid are stupid'
     },
     {
@@ -29,7 +29,7 @@ var dataIngredients =[
         proteins:'13',
         grease:'11',
         carbs:'1.1',
-        kkallories:'155',
+        calories:'155',
         content:'Eggs are AWESOME (and not stupid)'
     },
         {
@@ -38,7 +38,7 @@ var dataIngredients =[
             proteins:'2.9',
             grease:'0.4',
             carbs:'3.6',
-            kkallories:'23',
+            calories:'23',
             content:'Put this in everything'
         }
 ],
@@ -80,6 +80,36 @@ var dataIngredients =[
     ],
 
     recipeData=[
+        {
+            name:'Fried potatoes with eggs',
+            image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',
+            content:'Frying eggs is freakin awesome'
+
+        },
+        {
+            name:'Fried potatoes with eggs',
+            image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',
+            content:'Frying eggs is freakin awesome'
+
+        },
+        {
+            name:'Fried potatoes with eggs',
+            image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',
+            content:'Frying eggs is freakin awesome'
+
+        },
+        {
+            name:'Fried potatoes with eggs',
+            image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',
+            content:'Frying eggs is freakin awesome'
+
+        },
+        {
+            name:'Fried potatoes with eggs',
+            image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',
+            content:'Frying eggs is freakin awesome'
+
+        },
         {
             name:'Fried potatoes with eggs',
             image:'https://www.bbcgoodfood.com/sites/default/files/guide/guide-image/2018/01/two-fried-eggs.jpg',

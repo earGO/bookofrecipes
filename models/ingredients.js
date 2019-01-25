@@ -6,7 +6,7 @@ var ingredientSchema = new mongoose.Schema({
     proteins:String,
     grease:String,
     carbs:String,
-    kkallories:String,
+    calories:String,
     content:String
 })
 

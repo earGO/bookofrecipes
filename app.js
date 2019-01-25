@@ -28,6 +28,7 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+//recipes routes
 app.get('/recipes', (req, res) => {
     Recipe.find({},(err,allRecipes)=>{
         if(err){
@@ -38,6 +39,7 @@ app.get('/recipes', (req, res) => {
     })
 })
 
+//Ingredients routes
 app.get('/ingredients', (req, res) => {
     Ingredient.find({},(err,allIngredients)=>{
         if(err){
@@ -48,6 +50,7 @@ app.get('/ingredients', (req, res) => {
     })
 })
 
+//hardware routes
 app.get('/hardware',(req,res)=>{
     Hardware.find({},(err,allHardware)=>{
         if(err){
@@ -58,7 +61,9 @@ app.get('/hardware',(req,res)=>{
     })
 })
 
-
+app.get('/about',(req,res)=>{
+    res.render('about')
+})
 
 app.listen(port, function () {
     console.log('server up and running on port', port)
