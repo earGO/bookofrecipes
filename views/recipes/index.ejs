@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+
+<h1>This is a page for all recipes</h1>
+
+<%recipes.forEach(recipe => {%>
+<div>
+    <h1><%=recipe.name%></h1>
+    <img src="<%=recipe.image%>">
+    <p><%=recipe.content%></p>
+</div>
+<%})%>
+
+<% include ../partials/footer %>

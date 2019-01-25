@@ -4,30 +4,61 @@ var express = require('express'),
     app = express(),
     port = 3000;
 
+//models and seeds
+var Ingredient = require('./models/ingredients'),
+    Hardware = require('./models/hardware'),
+    seeds = require('./seeds'),
+    Stage = require('./models/stages'),
+    Recipe = require('./models/recipes')
+
+
+seeds.ingredientsSeedDB()
+seeds.hardwareSeedDB()
+seeds.stageSeedDB()
+seeds.recipeSeedDB()
+
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}));
 
 mongoose.connect('mongodb://localhost/bookofrecipes', {useNewUrlParser: true})
 
-var groceriesSchema = new mongoose.Schema({
-    name:String,
-    image:String,
-    proteins:String,
-    grease:String,
-    carbs:String,
-    kkallories:String
-})
-
-var Grocceries = mongoose.model('Groceries', groceriesSchema);
 
 app.get('/', (req, res) => {
-    res.send('got server up and running')
+    res.render('index')
 })
 
 app.get('/recipes', (req, res) => {
-    res.render('index')
+    Recipe.find({},(err,allRecipes)=>{
+        if(err){
+            console.log('error finding recipes\n',err)
+        } else {
+            res.render('recipes/index',{recipes:allRecipes})
+        }
+    })
 })
+
+app.get('/ingredients', (req, res) => {
+    Ingredient.find({},(err,allIngredients)=>{
+        if(err){
+            console.log('error fetching ingredients\n',err)
+        } else {
+            res.render('ingredients/index',{ingredients:allIngredients})
+        }
+    })
+})
+
+app.get('/hardware',(req,res)=>{
+    Hardware.find({},(err,allHardware)=>{
+        if(err){
+            console.log('error fetching hardware\n',err)
+        }else{
+            res.render('hardware/index',{hardware:allHardware})
+        }
+    })
+})
+
+
 
 app.listen(port, function () {
     console.log('server up and running on port', port)
